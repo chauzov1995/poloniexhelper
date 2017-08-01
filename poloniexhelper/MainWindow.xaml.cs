@@ -66,7 +66,7 @@ Account account = JsonConvert.DeserializeObject<Account>(json);
                 tb2.Text = m.asks[0][0].ToString();
 
 
-            tb3.Text
+           // tb3.Text
         }
     }
 
