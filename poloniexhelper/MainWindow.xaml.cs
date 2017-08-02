@@ -80,27 +80,32 @@ namespace poloniexhelper
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+
+            //покупка
+            double price = 0.00703233;
+            double total = 0.00010011;
+
+            string amount = (Math.Floor((total / price) * 100000000) / 100000000).ToString().Replace(',', '.');
+            MessageBox.Show(amount);
+            string zapros = zpros_poloniex("command=buy&currencyPair=BTC_FCT&rate=0.00703233&amount=" + amount);
+            MessageBox.Show(zapros);
+
+
+        }
+
+
+        string zpros_poloniex(string str)
+        {
+
             string site = "https://poloniex.com/tradingApi";
             string key = "G8PXBGX4-U5J21BS2-0265V2OK-WLTEL86R";
             string secret = "8c5bf988ae9dab073ba61ae3f5901d7f5c9119f3a0934e41a5af90bd44c145a472843ab927ddab1c12e0a50fcb78c5d3c287093c891e0b6f62ccec361740a594";
             string unixTime = (((DateTime.Now - new System.DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds).ToString()).Replace(",", "");
-            string command = "command=returnBalances&nonce=" + unixTime + "1";
+            string command = str + "&nonce=" + unixTime + "1";
             string hash = BitConverter.ToString(hmacSHA256(command, secret)).Replace("-", "").ToLower();
 
 
-
-
-
-
-
-
-
-
-
-
-
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(site);
-
 
             req.Headers.Add("Key: " + key);
             req.Headers.Add("Sign: " + hash);
@@ -109,7 +114,7 @@ namespace poloniexhelper
             req.ContentType = "application/x-www-form-urlencoded";
             req.ContentLength = command.Length;
 
-        
+
             using (var writer = new StreamWriter(req.GetRequestStream()))
             {
                 writer.Write(command);
@@ -120,14 +125,16 @@ namespace poloniexhelper
             using (StreamReader stream = new StreamReader(
                  resp.GetResponseStream(), Encoding.UTF8))
             {
-                MessageBox.Show(stream.ReadToEnd());
+                return stream.ReadToEnd();
             }
 
 
 
-
-
         }
+
+
+
+
 
         static byte[] hmacSHA256(String data, String key)
         {
@@ -144,7 +151,7 @@ namespace poloniexhelper
 
         public IList<IList<string>> asks;
         public IList<IList<string>> bids;
-        public string isFrozen;
+        //    public string 1CR;
         public string seq;
 
 

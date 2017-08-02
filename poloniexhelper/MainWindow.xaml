@@ -5,34 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:poloniexhelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="1034.19">
+        Title="MainWindow" Height="1097.76" Width="1034.19">
     <Grid>
         <Button Content="Подгрузить" HorizontalAlignment="Left" Margin="159,28,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="23" Margin="10,29,0,0" TextWrapping="Wrap" Text="VTC" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,8,0,0" TextWrapping="Wrap" Text="Торговая пара" VerticalAlignment="Top"/>
 
 
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="67" Margin="10,105,0,0" VerticalAlignment="Top" Width="452">
 
-        <Grid>
-            <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="23" Margin="320,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-            <TextBlock HorizontalAlignment="Left" Margin="320,11,0,0" TextWrapping="Wrap" Text="Цена покупки" VerticalAlignment="Top"/>
-            <TextBox x:Name="pok1" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="0.00317900" VerticalAlignment="Top" Width="120" Foreground="#FF4DB612"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="Мой баланс BTC" VerticalAlignment="Top"/>
-            <TextBox x:Name="pok2" HorizontalAlignment="Left" Height="23" Margin="171,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="23" Margin="709,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="709,120,0,0" TextWrapping="Wrap" Text="Цена покупки" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok1" HorizontalAlignment="Left" Height="23" Margin="692,26,0,0" TextWrapping="Wrap" Text="0.00317900" VerticalAlignment="Top" Width="120" Foreground="#FF4DB612"/>
+        <TextBlock HorizontalAlignment="Left" Margin="692,5,0,0" TextWrapping="Wrap" Text="Мой баланс BTC" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok2" HorizontalAlignment="Left" Height="23" Margin="845,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
-            <TextBlock HorizontalAlignment="Left" Margin="171,14,0,0" TextWrapping="Wrap" Text="Ставка (10% от баланса)" VerticalAlignment="Top"/>
-        </Grid>
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="67" Margin="479,105,0,0" VerticalAlignment="Top" Width="191">
-            <Grid>
-                <TextBox x:Name="pok4" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Red"/>
-                <TextBlock HorizontalAlignment="Left" Margin="9,10,0,0" TextWrapping="Wrap" Text="Цена продажи (на 2% больше)" VerticalAlignment="Top"/>
-            </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="845,8,0,0" TextWrapping="Wrap" Text="Ставка (10% от баланса)" VerticalAlignment="Top"/>
 
+        <TextBox x:Name="pok4" HorizontalAlignment="Left" Height="23" Margin="862,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="839,120,0,0" TextWrapping="Wrap" Text="Цена продажи (на 2% больше)" VerticalAlignment="Top"/>
 
-        </Border>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="839,74,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="375,49,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Купить на 2% дешевле" HorizontalAlignment="Left" Margin="692,179,0,0" VerticalAlignment="Top" Width="148" Height="68"/>
+        <Button Content="Продать на 2 % дороже" HorizontalAlignment="Left" Margin="845,179,0,0" VerticalAlignment="Top" Width="147" Height="68"/>
+        <Button Content="Купить сразу" HorizontalAlignment="Left" Margin="692,252,0,0" VerticalAlignment="Top" Width="148" Height="27"/>
+        <TextBox x:Name="pok2_Copy" HorizontalAlignment="Left" Height="23" Margin="773,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="773,74,0,0" TextWrapping="Wrap" Text="Текущяя цена" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok2_Copy1" HorizontalAlignment="Left" Height="23" Margin="706,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="706,302,0,0" TextWrapping="Wrap" Text="балнс" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok2_Copy2" HorizontalAlignment="Left" Height="23" Margin="862,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="862,302,0,0" TextWrapping="Wrap" Text="Баланс" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok2_Copy3" HorizontalAlignment="Left" Height="23" Margin="862,386,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="862,368,0,0" TextWrapping="Wrap" Text="были куплены за " VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
