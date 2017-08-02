@@ -68,7 +68,7 @@ namespace poloniexhelper
             //        tb2.Text = m.asks[0][0].ToString();
 
 
-            // tb3.Text
+            // 
 
             double balance = Convert.ToDouble((pok1.Text).Replace('.', ','));
             pok2.Text = (balance * 0.1).ToString("0.00000000");
