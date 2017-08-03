@@ -143,6 +143,77 @@ namespace poloniexhelper
                 return hmac.ComputeHash(Encoding.ASCII.GetBytes(data));
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            tb2.Text = "";
+            string para = tb1.Text.ToUpper();
+
+
+            //   int unixTime = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds - 310;
+
+
+
+            WebClient client = new WebClient();
+            var url = "https://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_" + para + "&depth=1";
+            var response = client.DownloadString(url);
+            //  var  last_upd = System.Text.Encoding.UTF8.GetString(response);
+            //  var trim = last_upd.Substring(1, last_upd.Length - 2);
+
+            var m = JsonConvert.DeserializeObject<returnChartData>(response);
+
+
+            //  
+
+            //        tb2.Text = m.asks[0][0].ToString();
+
+
+            // 
+
+            double balance = Convert.ToDouble((pok1.Text).Replace('.', ','));
+            double pokupkazena = Convert.ToDouble((m.asks[0][0]).Replace('.', ','));
+            double prodajazena = pokupkazena * 1.02;
+
+            pok2.Text = MyToString(balance);
+            tb2.Text = MyToString(pokupkazena);
+            pok4.Text = MyToString(prodajazena);
+
+
+
+
+
+
+            //покупка
+            double price = pokupkazena;
+            double total = balance * 0.1;//10 проц от всей суммы
+
+
+
+            string rate = MyToString(price);
+            string amount = MyToString(total / price);
+
+            string zapros = zpros_poloniex("command=buy&currencyPair=BTC_FCT&rate="+rate+"&amount=" + amount);
+
+            MessageBox.Show("Куплено по цене "+ rate + "\r\nНа сумму "+ total);
+            MessageBox.Show(zapros);
+
+
+
+        }
+
+        string MyToString(double zifr)
+        {
+
+            return (Math.Floor(zifr * 100000000) / 100000000).ToString().Replace(',', '.');
+
+        }
+
+        class currencyPair
+        {
+            public string asks;
+            public string bids;
+
+        }
     }
 
 

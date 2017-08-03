@@ -15,19 +15,18 @@
 
         <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="23" Margin="709,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="709,120,0,0" TextWrapping="Wrap" Text="Цена покупки" VerticalAlignment="Top"/>
-        <TextBox x:Name="pok1" HorizontalAlignment="Left" Height="23" Margin="692,26,0,0" TextWrapping="Wrap" Text="0.00317900" VerticalAlignment="Top" Width="120" Foreground="#FF4DB612"/>
-        <TextBlock HorizontalAlignment="Left" Margin="692,5,0,0" TextWrapping="Wrap" Text="Мой баланс BTC" VerticalAlignment="Top"/>
-        <TextBox x:Name="pok2" HorizontalAlignment="Left" Height="23" Margin="845,26,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="pok1" HorizontalAlignment="Left" Height="23" Margin="10,187,0,0" TextWrapping="Wrap" Text="0.00317900" VerticalAlignment="Top" Width="120" Foreground="#FF4DB612"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,166,0,0" TextWrapping="Wrap" Text="Мой баланс BTC" VerticalAlignment="Top"/>
+        <TextBox x:Name="pok2" HorizontalAlignment="Left" Height="23" Margin="10,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="845,8,0,0" TextWrapping="Wrap" Text="Ставка (10% от баланса)" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,231,0,0" TextWrapping="Wrap" Text="Ставка (10% от баланса)" VerticalAlignment="Top"/>
 
         <TextBox x:Name="pok4" HorizontalAlignment="Left" Height="23" Margin="862,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="839,120,0,0" TextWrapping="Wrap" Text="Цена продажи (на 2% больше)" VerticalAlignment="Top"/>
 
         <Button Content="Button" HorizontalAlignment="Left" Margin="375,49,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Купить на 2% дешевле" HorizontalAlignment="Left" Margin="692,179,0,0" VerticalAlignment="Top" Width="148" Height="68"/>
+        <Button Content="Купить сразу" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="148" Height="68" Click="Button_Click_2"/>
         <Button Content="Продать на 2 % дороже" HorizontalAlignment="Left" Margin="845,179,0,0" VerticalAlignment="Top" Width="147" Height="68"/>
-        <Button Content="Купить сразу" HorizontalAlignment="Left" Margin="692,252,0,0" VerticalAlignment="Top" Width="148" Height="27"/>
         <TextBox x:Name="pok2_Copy" HorizontalAlignment="Left" Height="23" Margin="773,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="773,74,0,0" TextWrapping="Wrap" Text="Текущяя цена" VerticalAlignment="Top"/>
         <TextBox x:Name="pok2_Copy1" HorizontalAlignment="Left" Height="23" Margin="706,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
