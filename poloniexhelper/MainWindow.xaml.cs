@@ -24,25 +24,54 @@ namespace poloniexhelper
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
 
+     
 
 
-            string json = @"{
-  'Email': 'james@example.com',
-  'Active': true,
-  'CreatedDate': '2013-01-20T00:00:00Z',
-  'Roles': [
-    'User',
-    'Admin'
-  ]
-}";
 
-            Account account = JsonConvert.DeserializeObject<Account>(json);
-            MessageBox.Show(account.Email);
+
+
+            List<valure> valuteall = new List<valure>();
+            List<string> valute=new List<string>(){ "ETH", "XEM", "NXT", "XRP", "LTC", "DGB", "BTS", "DASH", "ETC", "STRAT", "STR", "SC", "GNT", "XMR", "FCT", "ZEC", "LBC", "MAID", "LSK", "ARDR", "STEEM", "DOGE", "GAME", "REP", "BURST", "SYS", "CLAM", "BCY", "VRC", "DCR", "BCN", "EMC2", "PPC", "NAUT", "AMP", "GNO", "XBC", "PASC", "VIA", "VTC", "XCP", "FLDC", "POT", "OMNI", "NXC", "BTM", "SJCX", "BTCD", "NEOS", "EXP", "BLK", "GRC", "BELA", "PINK", "NMC", "FLO", "RADS", "XPM", "HUC", "XVC", "NOTE", "NAV", "SBD", "RIC" };
+            for(int i = 0; i < valute.Count; i++)
+            {
+                valuteall.Add(new valure() { name = valute[i], ordersozd = "" });
+
+            }
+
+
+            string zapros = zpros_poloniex("command=returnOpenOrders&currencyPair=all");
+            string[] stringSeparators = new string[] { @""":[{""" };
+            string[] splitkod = zapros.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+            string asdasd = splitkod[0].Split('_').Last();
+
+          //  valuteall.Find(x => x.name.Equals(asdasd)).ordersozd = "zel";
+
+            MessageBox.Show(valuteall[3].name.ToString());
+
+
+
+
+
+
+            lb1.ItemsSource = valuteall;
+            MessageBox.Show(valute[0]);
+
         }
+
+        public class valure
+        {
+            public string name;
+            public string ordersozd;
+
+
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -191,10 +220,12 @@ namespace poloniexhelper
 
             string rate = MyToString(price);
             string amount = MyToString(total / price);
+            string totalstring = MyToString(total);
+            
 
             string zapros = zpros_poloniex("command=buy&currencyPair=BTC_FCT&rate="+rate+"&amount=" + amount);
 
-            MessageBox.Show("Куплено по цене "+ rate + "\r\nНа сумму "+ total);
+            MessageBox.Show("Валюта "+ para + "\r\nКуплено по цене "+ rate + "\r\nВ колличестве  "+ amount+"\r\nНа сумму "+ totalstring);
             MessageBox.Show(zapros);
 
 
@@ -213,6 +244,32 @@ namespace poloniexhelper
             public string asks;
             public string bids;
 
+        }
+
+        private void lb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tb1.Text = ((sender as ListBox).SelectedValue.ToString());
+          
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            string zapros = zpros_poloniex("command=returnOpenOrders&currencyPair=all");
+        
+
+
+
+            string[] stringSeparators = new string[] { @""":[{""" };
+
+            string[] splitkod = zapros.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
+
+            string asdasd = splitkod[0].Split('_').Last();
+
+            
+
+            MessageBox.Show(asdasd.ToString());
+
+           
         }
     }
 

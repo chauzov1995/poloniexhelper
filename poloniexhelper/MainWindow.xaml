@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:poloniexhelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1097.76" Width="1034.19">
+        Title="MainWindow" Height="509.76" Width="750.69">
     <Grid>
         <Button Content="Подгрузить" HorizontalAlignment="Left" Margin="159,28,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="23" Margin="10,29,0,0" TextWrapping="Wrap" Text="VTC" VerticalAlignment="Top" Width="120"/>
@@ -24,7 +24,7 @@
         <TextBox x:Name="pok4" HorizontalAlignment="Left" Height="23" Margin="862,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="839,120,0,0" TextWrapping="Wrap" Text="Цена продажи (на 2% больше)" VerticalAlignment="Top"/>
 
-        <Button Content="Button" HorizontalAlignment="Left" Margin="375,49,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="159,91,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Купить сразу" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="148" Height="68" Click="Button_Click_2"/>
         <Button Content="Продать на 2 % дороже" HorizontalAlignment="Left" Margin="845,179,0,0" VerticalAlignment="Top" Width="147" Height="68"/>
         <TextBox x:Name="pok2_Copy" HorizontalAlignment="Left" Height="23" Margin="773,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
@@ -35,6 +35,18 @@
         <TextBlock HorizontalAlignment="Left" Margin="862,302,0,0" TextWrapping="Wrap" Text="Баланс" VerticalAlignment="Top"/>
         <TextBox x:Name="pok2_Copy3" HorizontalAlignment="Left" Height="23" Margin="862,386,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="862,368,0,0" TextWrapping="Wrap" Text="были куплены за " VerticalAlignment="Top"/>
+        <ListBox x:Name="lb1" HorizontalAlignment="Left" Height="441" Margin="274,28,0,0" VerticalAlignment="Top" Width="194" SelectionChanged="lb1_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="3">
+                        <TextBlock Text="{Binding name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <TextBox x:Name="swss" HorizontalAlignment="Left" Height="23" Margin="540,213,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="ордера" HorizontalAlignment="Left" Margin="15,72,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
 
     </Grid>
 </Window>
