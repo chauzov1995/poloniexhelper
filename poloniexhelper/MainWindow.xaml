@@ -26,27 +26,37 @@
 
         <Button Content="Button" HorizontalAlignment="Left" Margin="159,91,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Купить сразу" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="148" Height="68" Click="Button_Click_2"/>
-        <Button Content="Продать на 2 % дороже" HorizontalAlignment="Left" Margin="845,179,0,0" VerticalAlignment="Top" Width="147" Height="68"/>
+        <Button Content="Продать на 2 % дороже" HorizontalAlignment="Left" Margin="849,187,-253,0" VerticalAlignment="Top" Width="147" Height="68"/>
         <TextBox x:Name="pok2_Copy" HorizontalAlignment="Left" Height="23" Margin="773,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="773,74,0,0" TextWrapping="Wrap" Text="Текущяя цена" VerticalAlignment="Top"/>
-        <TextBox x:Name="pok2_Copy1" HorizontalAlignment="Left" Height="23" Margin="706,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="706,302,0,0" TextWrapping="Wrap" Text="балнс" VerticalAlignment="Top"/>
+        <TextBox x:Name="ordertb1" HorizontalAlignment="Left" Height="23" Margin="344,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,10,0,0" TextWrapping="Wrap" Text="Выставлен ордер" VerticalAlignment="Top"/>
         <TextBox x:Name="pok2_Copy2" HorizontalAlignment="Left" Height="23" Margin="862,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="862,302,0,0" TextWrapping="Wrap" Text="Баланс" VerticalAlignment="Top"/>
         <TextBox x:Name="pok2_Copy3" HorizontalAlignment="Left" Height="23" Margin="862,386,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="862,368,0,0" TextWrapping="Wrap" Text="были куплены за " VerticalAlignment="Top"/>
-        <ListBox x:Name="lb1" HorizontalAlignment="Left" Height="441" Margin="274,28,0,0" VerticalAlignment="Top" Width="194" SelectionChanged="lb1_SelectionChanged">
-            <ListBox.ItemTemplate>
+        <ListView x:Name="lb1" HorizontalAlignment="Left" Height="441" Margin="239,0,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="lb1_SelectionChanged">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="3">
-                        <TextBlock Text="{Binding name}" />
-                    </Grid>
+                    <TextBlock Text="{Binding name}" Background="{Binding ordersozd}"/>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-
-        </ListBox>
-        <TextBox x:Name="swss" HorizontalAlignment="Left" Height="23" Margin="540,213,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox x:Name="swss" HorizontalAlignment="Left" Height="23" Margin="682,215,-59,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button Content="ордера" HorizontalAlignment="Left" Margin="15,72,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,94,0,0" TextWrapping="Wrap" Text="ордер был куплен за" VerticalAlignment="Top"/>
+        <TextBox x:Name="orderkupl" HorizontalAlignment="Left" Height="23" Margin="344,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="bb" HorizontalAlignment="Left" Height="22" Margin="663,370,-40,0" TextWrapping="Wrap" Text="08331100" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Отмена сделки" HorizontalAlignment="Left" Margin="488,13,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_4"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,166,0,0" TextWrapping="Wrap" Text="За сколько будем продавать на 2% больше" VerticalAlignment="Top"/>
+        <TextBox x:Name="zaskopok" HorizontalAlignment="Left" Height="23" Margin="344,187,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Продём по этой цене &lt;--" HorizontalAlignment="Left" Margin="469,187,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click_5"/>
+        <TextBox x:Name="stavka10per" HorizontalAlignment="Left" Height="23" Margin="344,256,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,239,0,0" TextWrapping="Wrap" Text="Ставка 10% от нашего баланса" VerticalAlignment="Top" Width="260"/>
+        <TextBlock HorizontalAlignment="Left" Margin="344,284,0,0" TextWrapping="Wrap" Text="Цена покупки" VerticalAlignment="Top"/>
+        <TextBox x:Name="zenapokupk" HorizontalAlignment="Left" Height="23" Margin="344,304,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Купить  сейчас" HorizontalAlignment="Left" Margin="469,281,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_6"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="636,19,0,0" VerticalAlignment="Top" Width="66" Height="66" Click="Button_Click_7"/>
 
     </Grid>
 </Window>
